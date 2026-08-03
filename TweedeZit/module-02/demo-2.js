@@ -1,0 +1,12 @@
+createCanvas(windowWidth, windowHeight);
+background(255);
+noStroke();
+colorMode(HSB);
+let x = random(0, width);
+let y = random(0, height);
+let size = 100;
+let halfSize = size / 2;
+fill(random(0, 360), 50, 50);
+circle(x, y, size);
+circle(x - halfSize, y - halfSize, halfSize);
+circle(x + halfSize, y - halfSize, halfSize);
