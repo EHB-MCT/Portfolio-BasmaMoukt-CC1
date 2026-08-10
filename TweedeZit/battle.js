@@ -1,7 +1,9 @@
 let size = 0;
 let h = 0;
 let sizeDiff = 1;
-let shape = true;
+shape = 1; // circle
+shape = 2; // rectangle - square
+shape = 3; // triangle
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -18,10 +20,19 @@ function draw() {
 
 	//shape
 	fill(h, 100, 100);
-	if (shape) {
+	if (shape === 1) {
 		circle(width / 2, height / 2, size);
-	} else {
+	} else if (shape === 2) {
 		rect(width / 2, height / 2, size, size);
+	} else if (shape === 3) {
+		triangle(
+			width / 2,
+			height / 2 - size / 2,
+			width / 2 - size / 2,
+			height / 2 + size / 2,
+			width / 2 + size / 2,
+			height / 2 + size / 2,
+		);
 	}
 	//mouse interactions
 	k1(mouseX / 100);
@@ -35,6 +46,10 @@ function keyPressed() {
 	if (key === "z" || key === "Z") {
 		pad2();
 	}
+
+	if (key === "s" || key === "S") {
+		pad3();
+	}
 }
 
 function pad1() {
@@ -42,7 +57,13 @@ function pad1() {
 }
 
 function pad2() {
-	shape = !shape;
+	shape++; // shape++ = go to the next shape.
+	if (shape > 3) shape = 1;
+}
+
+function pad3() {
+	shape++;
+	if (shape > 3) shape = 1;
 }
 
 function k1(speed) {
@@ -55,46 +76,47 @@ function k2(hue) {
 	h = constrain(hue, 0, 360);
 }
 
-// function receivedOSC(address, args) {
-// 	let values = oscArgsToArray(args);
-// 	//receives OSC messages for different addresses
-// 	//the pads are buttons, the k's are knobs
-// 	switch (address) {
-// 		case "/pad1":
-// 			pad1();
-// 			break;
-// 		case "/pad2":
-// 			pad2();
-// 			break;
-// 		case "/pad3":
-// 			break;
-// 		case "/pad4":
-// 			break;
-// 		case "/pad5":
-// 			break;
-// 		case "/pad6":
-// 			break;
-// 		case "/pad7":
-// 			break;
-// 		case "/pad8":
-// 			break;
-// 		case "/k1":
-// 			k1(values[0] / 10);
-// 			break;
-// 		case "/k2":
-// 			k2((values[0] / 127) * 360);
-// 			break;
-// 		case "/k3":
-// 			break;
-// 		case "/k4":
-// 			break;
-// 		case "/k5":
-// 			break;
-// 		case "/k6":
-// 			break;
-// 		case "/k7":
-// 			break;
-// 		case "/k8":
-// 			break;
-// 	}
-// }
+function receivedOSC(address, args) {
+	let values = oscArgsToArray(args);
+	//receives OSC messages for different addresses
+	//the pads are buttons, the k's are knobs
+	switch (address) {
+		case "/pad1":
+			pad1();
+			break;
+		case "/pad2":
+			pad2();
+			break;
+		case "/pad3":
+			pad3();
+			break;
+		case "/pad4":
+			break;
+		case "/pad5":
+			break;
+		case "/pad6":
+			break;
+		case "/pad7":
+			break;
+		case "/pad8":
+			break;
+		case "/k1":
+			k1(values[0] / 10);
+			break;
+		case "/k2":
+			k2((values[0] / 127) * 360);
+			break;
+		case "/k3":
+			break;
+		case "/k4":
+			break;
+		case "/k5":
+			break;
+		case "/k6":
+			break;
+		case "/k7":
+			break;
+		case "/k8":
+			break;
+	}
+}
