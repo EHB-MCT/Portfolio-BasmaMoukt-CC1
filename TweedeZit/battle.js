@@ -34,6 +34,27 @@ function draw() {
 			height / 2 + size / 2,
 		);
 	}
+
+	let ix = width - mouseX;
+	let iy = height - mouseY;
+
+	fill(h, 100, 40); // darker = opposite emotion
+
+	if (shape === 1) {
+		circle(ix, iy, size / 4);
+	} else if (shape === 2) {
+		rect(ix, iy, size / 4, size / 4);
+	} else if (shape === 3) {
+		triangle(
+			ix,
+			iy - size / 5,
+			ix - size / 5,
+			iy + size / 5,
+			ix + size / 5,
+			iy + size / 5,
+		);
+	}
+
 	//mouse interactions
 	k1(mouseX / 100);
 	k2(map(mouseY, 0, height, 0, 360));
