@@ -22,8 +22,9 @@ function draw() {
 	fill(h, 100, 100);
 	if (shape === 1) {
 		circle(width / 2, height / 2, size);
+
+		fill(h + 180, 100, 100);
 		circle(mouseX, mouseY, 100); //3rd circlea
-		// fill(h, 100, 100);
 	} else if (shape === 2) {
 		rect(width / 2, height / 2, size, size);
 		rect(mouseX, mouseY, 100); // 3rd rectangle
