@@ -22,10 +22,23 @@ function draw() {
 	fill(h, 100, 100);
 	if (shape === 1) {
 		circle(width / 2, height / 2, size);
+		circle(mouseX, mouseY, 100); //3rd circlea
+		// fill(h, 100, 100);
 	} else if (shape === 2) {
 		rect(width / 2, height / 2, size, size);
+		rect(mouseX, mouseY, 100); // 3rd rectangle
 	} else if (shape === 3) {
 		triangle(
+			width / 2,
+			height / 2 - size / 2,
+			width / 2 - size / 2,
+			height / 2 + size / 2,
+			width / 2 + size / 2,
+			height / 2 + size / 2,
+		);
+		triangle(
+			mouseX,
+			mouseY,
 			width / 2,
 			height / 2 - size / 2,
 			width / 2 - size / 2,
