@@ -40,6 +40,7 @@ function draw() {
 			height / 2 + size / 2,
 		);
 
+		fill(360, 100, 100);
 		triangle(
 			mouseX,
 			mouseY - size / 2, // top
