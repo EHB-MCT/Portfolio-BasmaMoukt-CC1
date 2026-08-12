@@ -1,6 +1,7 @@
 let size = 0;
 let h = 0;
 let sizeDiff = 1;
+let angle = 0;
 shape = 1; // circle
 shape = 2; // rectangle - square
 shape = 3; // triangle
@@ -10,6 +11,7 @@ function setup() {
 	colorMode(HSB, 360, 100, 100);
 	rectMode(CENTER);
 	noStroke();
+	background("black");
 }
 
 function draw() {
@@ -27,7 +29,14 @@ function draw() {
 		circle(mouseX, mouseY, 100); //3rd circlea
 	} else if (shape === 2) {
 		rect(width / 2, height / 2, size, size);
+		// Move to mouse position
+		translate(mouseX, mouseY);
 
+		// Rotate around the mouse
+		rotate(angle);
+
+		// Increase angle for looping twist
+		angle += 0.03; // speed of twist
 		fill(360, 100, 100);
 		rect(mouseX, mouseY, 100); // 3rd rectangle
 	} else if (shape === 3) {
@@ -40,7 +49,15 @@ function draw() {
 			height / 2 + size / 2,
 		);
 
-		fill(360, 100, 100);
+		translate(mouseX, mouseY);
+
+		// Rotate around the mouse
+		rotate(angle);
+
+		// Increase angle for looping twist
+		angle += 0.03; // speed of twist
+
+		fill(360, 100, 100); // color red
 		triangle(
 			mouseX,
 			mouseY - size / 2, // top
