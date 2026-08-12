@@ -19,14 +19,16 @@ function draw() {
 	size = constrain(size, 0, width * 2); // keep size reasonable
 
 	//shape
-	fill(h, 100, 100);
+	fill(100, 0, 100);
 	if (shape === 1) {
 		circle(width / 2, height / 2, size);
 
-		fill(h + 180, 100, 100);
+		fill(360, 100, 100);
 		circle(mouseX, mouseY, 100); //3rd circlea
 	} else if (shape === 2) {
 		rect(width / 2, height / 2, size, size);
+
+		fill(360, 100, 100);
 		rect(mouseX, mouseY, 100); // 3rd rectangle
 	} else if (shape === 3) {
 		triangle(
@@ -37,15 +39,14 @@ function draw() {
 			width / 2 + size / 2,
 			height / 2 + size / 2,
 		);
+
 		triangle(
 			mouseX,
-			mouseY,
-			width / 2,
-			height / 2 - size / 2,
-			width / 2 - size / 2,
-			height / 2 + size / 2,
-			width / 2 + size / 2,
-			height / 2 + size / 2,
+			mouseY - size / 2, // top
+			mouseX - size / 2,
+			mouseY + size / 2, // left
+			mouseX + size / 2,
+			mouseY + size / 2, // right
 		);
 	}
 
