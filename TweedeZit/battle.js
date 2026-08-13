@@ -1,8 +1,9 @@
-//
+// toevoegingen
 let size = 0;
 let h = 0;
 let sizeDiff = 1;
 let angle = 0;
+let circles = [];
 shape = 1; // circle
 shape = 2; // rectangle - square
 shape = 3; // triangle
