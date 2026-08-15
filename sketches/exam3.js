@@ -1,7 +1,8 @@
 function setup() {
 	createCanvas(600, 400);
-	background("lightblue");
+	background("#0c9cc1");
 	noFill();
+
 	noStroke();
 }
 
