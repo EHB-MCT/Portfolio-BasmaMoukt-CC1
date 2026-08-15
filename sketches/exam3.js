@@ -21,27 +21,48 @@ function draw() {
 	rect(x - 50, y, 100, 50);
 	circle(x + 50, y + 50 - 35, 70); //rechts
 
-	fill("red");
+	fill(90);
 	let xR = random(600);
 	let yR = random(400);
-	rect(x, y, 100);
+	circle(xR, yR, 100); //midden
+	circle(xR - 50, yR + 50 - 30, 60); //links
+	rect(xR - 50, yR, 100, 50);
+	circle(xR + 50, yR + 50 - 35, 70); //rechts
 	noLoop();
 
-	fill("blue");
+	fill(200);
 	let xT = random(600);
 	let yT = random(400);
-	rect(xT, yT, 120);
+	circle(xT, yT, 100); //midden
+	circle(xT - 50, yT + 50 - 30, 60); //links
+	rect(xT - 50, yT, 100, 50);
+	circle(xT + 50, yT + 50 - 35, 70); //rechts
 	noLoop();
 
-	fill("green");
+	fill(140);
 	let xB = random(600);
 	let yB = random(400);
-	rect(xB, yB, 90);
+	circle(xB, yB, 100); //midden
+	circle(xB - 50, yB + 50 - 30, 60); //links
+	rect(xB - 50, yB, 100, 50);
+	circle(xB + 50, yB + 50 - 35, 70); //rechts
 	noLoop();
 
-	fill("orange");
+	fill("130");
 	let xO = random(600);
 	let yO = random(400);
-	rect(xO, yO, 50);
+	circle(xO, yO, 100); //midden
+	circle(xO - 50, yO + 50 - 20, 40); //links
+	rect(xO - 50, yO, 100, 50);
+	circle(xO + 50, yO + 50 - 35, 70); //rechts
+	noLoop();
+
+	fill("130");
+	let x6 = random(600);
+	let y6 = random(400);
+	circle(x6, y6, 100); //midden
+	circle(x6 - 50, y6 + 50 - 20, 40); //links
+	rect(x6 - 50, y6, 100, 50);
+	circle(x6 + 50, y6 + 50 - 35, 70); //rechts
 	noLoop();
 }
